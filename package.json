@@ -1,0 +1,21 @@
+{
+  "name": "bmu_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "moment": "^2.30.1",
+    "node-telegram-bot-api": "^0.58.0",
+    "telegraf": "^3.38.0",
+    "telegraf-ratelimit": "^2.0.0"
+  }
+}
