@@ -1,9 +1,6 @@
 const { Composer } = require('telegraf');
 require('dotenv').config();
-const FS = require('../utils/fs/fs');
-const path = require('path');
 const Markup = require('telegraf/markup');
-const PG = require('../utils/pg/pg');
 const { sendPageFaq, sendPageAll } = require('./renderQuestions');
 
 const adminId = process.env.ADMIN_ID;

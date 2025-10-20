@@ -36,6 +36,7 @@ bot.use(require('./Composer/answer'))
 bot.use(require('./Composer/adminButtons'))
 bot.use(require('./Composer/checkQuestion'))
 bot.use(require('./Composer/addFaq'))
+bot.use(require('./Composer/contacts'))
 bot.startPolling()
 bot.launch().then(() => {
 	console.log(`bot started on @${bot.options.username}`);
