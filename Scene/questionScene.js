@@ -16,8 +16,7 @@ questionSceneUz.enter(async (ctx) => {
 	await ctx.replyWithHTML(
 		`
 			<b>Savolingizni yozing!</b>
-		`,
-		Extra.markup(Markup.forceReply()),
+		`
 	);
 });
 
@@ -42,13 +41,13 @@ questionSceneUz.on('text', async (ctx) => {
 		const allQuestion = JSON.parse(oldQuestion.read());
 
 		newQuestion.id = allQuestion.length + 1,
-		newQuestion.user_id = userId,
-		newQuestion.question = userQuestion,
-		newQuestion.answer = "",
-		newQuestion.answer_at = false,
-		newQuestion.status = true,
-		newQuestion.faq = false,
-		newQuestion.type = "q"
+			newQuestion.user_id = userId,
+			newQuestion.question = userQuestion,
+			newQuestion.answer = "",
+			newQuestion.answer_at = false,
+			newQuestion.status = true,
+			newQuestion.faq = false,
+			newQuestion.type = "q"
 		newQuestion.create_at = moment().format('YYYY-MM-DD HH:mm:ss')
 		newQuestion.update_at = ""
 

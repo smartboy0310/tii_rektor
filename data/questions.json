@@ -243,5 +243,29 @@
         "type": "q",
         "create_at": "2025-10-13 10:53:56",
         "update_at": ""
+    },
+    {
+        "id": 22,
+        "user_id": 119621437,
+        "question": "asdasdasdsadasdsads",
+        "answer": "",
+        "answer_at": false,
+        "status": true,
+        "faq": false,
+        "type": "q",
+        "create_at": "2025-10-20 09:55:42",
+        "update_at": ""
+    },
+    {
+        "id": 23,
+        "user_id": 119621437,
+        "question": "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "answer": "",
+        "answer_at": false,
+        "status": true,
+        "faq": false,
+        "type": "q",
+        "create_at": "2025-10-20 09:56:38",
+        "update_at": ""
     }
 ]
