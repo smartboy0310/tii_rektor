@@ -7,8 +7,6 @@ const moment = require('moment');
 require('dotenv').config();
 const adminId = process.env.ADMIN_ID;
 const mainKeyBoard = require('../data/mainKeyBoard');
-const Extra = require('telegraf/extra');
-
 
 const questionSceneUz = new Scene('questionSceneUz');
 
