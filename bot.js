@@ -27,20 +27,20 @@ bot.use(session());
 bot.use(stage.middleware());
 bot.use(rateLimit())
 
-const sequelize = require("./utils/db/db_connection")
-const Questions = require('./model/question.model')
- async function db () {
-    try {
-        await sequelize.authenticate();
-        console.info("Database connected");
-        await sequelize.sync({ force: true });
-        console.info("Database created");
-    } catch (error) {
-        console.error("Xatolik aniqlandi :", error)
-    }
-} 
+// const sequelize = require("./utils/db/db_connection")
+// const Questions = require('./model/question.model')
+//  async function db () {
+//     try {
+//         await sequelize.authenticate();
+//         console.info("Database connected");
+//         await sequelize.sync({ force: true });
+//         console.info("Database created");
+//     } catch (error) {
+//         console.error("Xatolik aniqlandi :", error)
+//     }
+// } 
 
-db()
+// db()
 
 bot.use(require('./Composer/start'));
 bot.use(require('./Composer/editLang'));
