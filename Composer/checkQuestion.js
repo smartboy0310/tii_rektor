@@ -150,13 +150,14 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
         }
         else {
             const question_id = parseInt(ctx.match[1]);
-            ctx.session.userId = ctx.update.message.chat.id
+
             const oldFaq = new FS(
                 path.resolve(__dirname, '..', 'data', 'faq.json'),
             );
             const userFaq = JSON.parse(oldFaq.read()).find(e => e?.id == question_id);
+            
             await ctx.telegram.sendMessage(
-                userFaq?.user_id,
+                ctx.update.callback_query.from.id,
                 `Savol matni: ${userFaq?.question}\nJavob matni: ${userFaq?.answer}`,
                 Markup.inlineKeyboard(
                     [

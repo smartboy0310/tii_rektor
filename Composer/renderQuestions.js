@@ -20,7 +20,7 @@ async function sendPage(ctx, page, userId, limit, pageType) {
 			`<b>Sizning savollaringiz (${page}/${totalPages}):\n\n</b>`,
 			Markup.inlineKeyboard(
 				keyBoards
-			).extra().resize(),
+			).extra()
 		)
 
 	} catch (error) {
@@ -51,7 +51,7 @@ async function sendPageFaq(ctx, page, limit, pageType) {
 		`<b>Ko'p so'raladigan savollar (${page}/${totalPages}):\n\n</b>`,
 		Markup.inlineKeyboard(
 			keyBoards
-		).extra().resize(),
+		).extra()
 	)
 }
 
@@ -68,7 +68,7 @@ async function sendPageAll(ctx, page) {
 			`<b>Barcha savollar ro'yxati (${page}/${totalPages}):\n\n</b>`,
 			Markup.inlineKeyboard(
 				keyBoards
-			).extra().resize(),
+			).extra()
 		)
 
 	} catch (error) {
