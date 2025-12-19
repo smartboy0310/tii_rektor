@@ -267,5 +267,29 @@
         "type": "q",
         "create_at": "2025-10-20 09:56:38",
         "update_at": ""
+    },
+    {
+        "id": 24,
+        "user_id": 119621437,
+        "question": "Assalomu alaykum",
+        "answer": "",
+        "answer_at": false,
+        "status": true,
+        "faq": false,
+        "type": "q",
+        "create_at": "2025-12-19 16:33:38",
+        "update_at": ""
+    },
+    {
+        "id": 25,
+        "user_id": 119621437,
+        "question": "Shukur ikkalamiz yozdik",
+        "answer": "nima gap",
+        "answer_at": true,
+        "status": true,
+        "faq": false,
+        "type": "q",
+        "create_at": "2025-12-19 16:34:43",
+        "update_at": "2025-12-19 16:35:18"
     }
 ]

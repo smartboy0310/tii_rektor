@@ -3,6 +3,7 @@ require('dotenv').config();
 const FS = require('../utils/fs/fs');
 const path = require('path');
 const Markup = require('telegraf/markup');
+const { log } = require('telegraf/composer');
 
 const adminId = process.env.ADMIN_ID;
 
@@ -155,6 +156,7 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
                 path.resolve(__dirname, '..', 'data', 'faq.json'),
             );
             const userFaq = JSON.parse(oldFaq.read()).find(e => e?.id == question_id);
+            console.log(ctx.update.callback_query.from.id);
             
             await ctx.telegram.sendMessage(
                 ctx.update.callback_query.from.id,
