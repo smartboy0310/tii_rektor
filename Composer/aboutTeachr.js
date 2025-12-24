@@ -3,7 +3,9 @@ const composer = new Composer()
 
 composer.hears("✨ Ustoz haqida", async (ctx) => {
     try {
-        await ctx.replyWithHTML(`<b> Imom Buxoriy nomidagi Toshkent islom instituti rektori – Gʼafurov Uygʼun Toʼlqinovich </b>
+        await ctx.replyWithHTML(`<b> Imom Buxoriy nomidagi Toshkent islom institut rektori
+G‘afurov Uyg‘un To‘lqinovichga
+TAVSIFNOMA </b>
 
 ✅ t.me/uygun_gafurov
 ✅ youtube.com/uygun_gafurov

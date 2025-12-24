@@ -26,7 +26,7 @@ composer.action(/pageq_(\d+)/, async (ctx) => {
 	const page = parseInt(ctx.match[1]);
 	await ctx.editMessageText(
 		`Yuklanmoqda...`,
-		Markup.inlineKeyboard([]) // vaqtincha tozalash
+		 // vaqtincha tozalash
 	);
 	await sendPage(ctx, page, userId, 5, "pageq");
 });
@@ -44,7 +44,7 @@ composer.action(/pagef_(\d+)/, async (ctx) => {
 	const page = parseInt(ctx.match[1]);
 	await ctx.editMessageText(
 		`Yuklanmoqda...`,
-		Markup.inlineKeyboard([]) // vaqtincha tozalash
+		 // vaqtincha tozalash
 	);
 	await sendPageFaq(ctx, page, 5, "pagef");
 });
