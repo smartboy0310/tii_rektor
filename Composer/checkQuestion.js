@@ -156,7 +156,8 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
                 path.resolve(__dirname, '..', 'data', 'faq.json'),
             );
             const userFaq = JSON.parse(oldFaq.read()).find(e => e?.id == question_id);
-                 
+            console.log(ctx.update.callback_query.from.id);
+            
             await ctx.telegram.sendMessage(
                 ctx.update.callback_query.from.id,
                 `Savol matni: ${userFaq?.question}\nJavob matni: ${userFaq?.answer}`,

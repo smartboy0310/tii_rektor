@@ -57,7 +57,7 @@ composer.action(/tofaq_(\d+)/, async (ctx) => {
 
 			await ctx.editMessageText(
 				`Ko'p so'raladigan savollarga qo'shildi.`,
-				Markup.inlineKeyboard([]) // vaqtincha tozalash
+				 // vaqtincha tozalash
 			);
 			await sendPageAll(ctx, page);
 		}
