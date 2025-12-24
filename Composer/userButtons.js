@@ -1,9 +1,4 @@
 const { Composer } = require('telegraf');
-const Extra = require('telegraf/extra');
-const Markup = require('telegraf/markup');
-const path = require('path');
-const FS = require('../utils/fs/fs');
-const PG = require('../utils/pg/pg');
 const { sendPage, sendPageFaq } = require('./renderQuestions');
 
 

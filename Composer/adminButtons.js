@@ -3,14 +3,14 @@ require('dotenv').config();
 const Markup = require('telegraf/markup');
 const { sendPageFaq, sendPageAll } = require('./renderQuestions');
 
-const adminId = process.env.ADMIN_ID;
+const adminId = JSON.parse(process.env.ADMIN_ID);
 
 const composer = new Composer();
 
 
 composer.hears("✍️ Barcha savollar", async (ctx) => {
 	try {
-		if (ctx.update.message.chat.id == adminId) {
+		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1]) {
 			sendPageAll(ctx, 1)
 		}
 	} catch (e) {
@@ -31,7 +31,7 @@ composer.action(/pageqa_(\d+)/, async (ctx) => {
 composer.hears("❓ FAQ", async (ctx) => {
 	try {
 		ctx.session.userId = ctx.update.message.chat.id 
-		if (ctx.update.message.chat.id == adminId) {
+		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1]) {
 			sendPageFaq(ctx, 1, 10, "pagefa")
 		}
 	} catch (e) {

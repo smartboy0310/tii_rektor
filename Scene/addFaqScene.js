@@ -19,7 +19,7 @@ addFaq.on('text', async (ctx) => {
     );
     const allFaq = JSON.parse(oldFaq.read());
 
-    newFaq.id = allFaq.length + 1
+    newFaq.id = new Date().getTime()
     newFaq.question = "Assalomu alaykum"
     newFaq.question = newFaqText.split('/')[0] ? newFaqText.split('/')[0] : ""
     newFaq.answer = newFaqText.split('/')[1] ? newFaqText.split('/')[1] : ""

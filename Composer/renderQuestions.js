@@ -3,7 +3,7 @@ const path = require('path');
 const PG = require("../utils/pg/pg");
 const Markup = require('telegraf/markup');
 require('dotenv').config();
-const adminId = process.env.ADMIN_ID;
+const adminId = JSON.parse(process.env.ADMIN_ID);
 
 async function sendPage(ctx, page, userId, limit, pageType) {
 	try {
@@ -38,7 +38,7 @@ async function sendPageFaq(ctx, page, limit, pageType) {
 	const faq = allFaqQuestion.filter(e => e.status == true)
 
 	const { keyBoards, totalPages } = PG(faq, page, limit, pageType)
-	if (ctx.session.userId == adminId) {
+	if (ctx.session.userId == adminId[0] || ctx.session.userId == adminId[1]) {
 		keyBoards.push([
 			{
 				text: "➕ Qo'shish",

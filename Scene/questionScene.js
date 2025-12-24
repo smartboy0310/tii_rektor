@@ -5,7 +5,7 @@ const path = require('path');
 const moment = require('moment');
 
 require('dotenv').config();
-const adminId = process.env.ADMIN_ID;
+const adminId = JSON.parse(process.env.ADMIN_ID);
 const mainKeyBoard = require('../data/mainKeyBoard');
 
 const questionSceneUz = new Scene('questionSceneUz');
@@ -24,7 +24,7 @@ questionSceneUz.on('text', async (ctx) => {
 			`
 			<b>Savolingiz qabul qilindi</b>
 			`,
-			Markup.keyboard(mainKeyBoard.uz_keyboard).oneTime().resize().extra(),
+			Markup.keyboard(mainKeyBoard.uz_keyboard).resize().extra(),
 		);
 
 
@@ -37,8 +37,9 @@ questionSceneUz.on('text', async (ctx) => {
 			path.resolve(__dirname, '..', 'data', 'questions.json'),
 		);
 		const allQuestion = JSON.parse(oldQuestion.read());
-
-		newQuestion.id = allQuestion.length + 1,
+		
+		
+			newQuestion.id = new Date().getTime(),
 			newQuestion.user_id = userId,
 			newQuestion.question = userQuestion,
 			newQuestion.answer = "",
@@ -53,7 +54,18 @@ questionSceneUz.on('text', async (ctx) => {
 		allQuestion.push(newQuestion);
 
 		await ctx.telegram.sendMessage(
-			adminId,
+			adminId[0],
+			`Yangi savol:\n${userQuestion}`,
+			Markup.inlineKeyboard([
+				{
+					text: '✏️ Javob yozish',
+					callback_data: `answer_${newQuestion.id}`
+				},
+			]).extra(),
+		);
+
+		await ctx.telegram.sendMessage(
+			adminId[1],
 			`Yangi savol:\n${userQuestion}`,
 			Markup.inlineKeyboard([
 				{

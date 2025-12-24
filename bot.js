@@ -26,6 +26,12 @@ const stage = new Stage([
 bot.use(session());
 bot.use(stage.middleware());
 bot.use(rateLimit())
+bot.use(async (ctx, next) => {
+	if (ctx.callbackQuery) {
+		await ctx.answerCbQuery();
+	}
+	return next();
+});
 
 // const sequelize = require("./utils/db/db_connection")
 // const Questions = require('./model/question.model')

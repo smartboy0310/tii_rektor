@@ -5,7 +5,7 @@ const path = require('path');
 const Markup = require('telegraf/markup');
 const { log } = require('telegraf/composer');
 
-const adminId = process.env.ADMIN_ID;
+const adminId = JSON.parse(process.env.ADMIN_ID)
 
 const composer = new Composer();
 
@@ -13,7 +13,7 @@ composer.action(/questionq_(\d+)/, async (ctx, next) => {
     try {
         const pageOf = ctx.session.pageOf
 
-        if (ctx.update.callback_query.from.id == adminId) {
+        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
 
             const question_id = parseInt(ctx.match[1]);
             const oldQuestion = new FS(
@@ -122,7 +122,7 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
     try {
         const pageOf = ctx.session.pageOf
 
-        if (ctx.update.callback_query.from.id == adminId) {
+        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
 
             const question_id = parseInt(ctx.match[1]);
             const oldFaq = new FS(
@@ -156,7 +156,6 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
                 path.resolve(__dirname, '..', 'data', 'faq.json'),
             );
             const userFaq = JSON.parse(oldFaq.read()).find(e => e?.id == question_id);
-            console.log(ctx.update.callback_query.from.id);
             
             await ctx.telegram.sendMessage(
                 ctx.update.callback_query.from.id,
