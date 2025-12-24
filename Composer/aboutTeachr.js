@@ -12,7 +12,6 @@ G‘afurov Uyg‘un To‘lqinovich</b>
     2024-yil 6-dekabrdan hozirga qadar Toshkent islom instituti rektori vazifasida ishlab kelmoqda.
 
 ✅ t.me/uygun_gafurov
-✅ youtube.com/uygun_gafurov
 ✅ instagram.com/uygungafurov
 ✅ facebook.com/share/agKPEhiFGJPxCZ53/?mibextid=qi2Omg 
         `)
@@ -25,7 +24,6 @@ composer.hears('✨ Устоз ҳақида', async (ctx) => {
     try {
         await ctx.replyWithHTML(`<b style = "textAlign:center">Imom Buxoriy nomidagi Toshkent islom instituti rektori – Gʼafurov Uygʼun Toʼlqinovich</b>\n
 ✅ t.me/uygun_gafurov
-✅ youtube.com/uygun_gafurov
 ✅ instagram.com/uygungafurov
 ✅ facebook.com/share/agKPEhiFGJPxCZ53/?mibextid=qi2Omg 
         
