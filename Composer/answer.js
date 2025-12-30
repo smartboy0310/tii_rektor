@@ -10,7 +10,7 @@ const composer = new Composer();
 
 composer.action(/answer_(\d+)/, async (ctx, next) => {
 	try {
-		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 			const question_id = parseInt(ctx.match[1]);	
 			const oldQuestion = new FS(
 				path.resolve(__dirname, '..', 'data', 'questions.json'),

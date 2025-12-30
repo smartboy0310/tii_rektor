@@ -10,7 +10,7 @@ const composer = new Composer();
 
 composer.hears("✍️ Barcha savollar", async (ctx) => {
 	try {
-		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1]) {
+		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 			sendPageAll(ctx, 1)
 		}
 	} catch (e) {
@@ -31,7 +31,7 @@ composer.action(/pageqa_(\d+)/, async (ctx) => {
 composer.hears("❓ FAQ", async (ctx) => {
 	try {
 		ctx.session.userId = ctx.update.message.chat.id 
-		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1]) {
+		if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 			sendPageFaq(ctx, 1, 10, "pagefa")
 		}
 	} catch (e) {

@@ -9,7 +9,7 @@ const mainKeyBoard = require('../data/mainKeyBoard.js');
 const composer = new Composer();
 
 composer.command('start', async (ctx) => {
-	if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1]) {
+	if (ctx.update.message.chat.id == adminId[0] || ctx.update.message.chat.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 		try {
 			await ctx.replyWithHTML(`<b>Assalomu alaykum. ${ctx.from.first_name ? ctx.from.first_name : ""}, Xush kelibsiz</b>`,
 				Markup.keyboard(

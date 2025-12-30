@@ -38,7 +38,7 @@ async function sendPageFaq(ctx, page, limit, pageType) {
 	const faq = allFaqQuestion.filter(e => e.status == true)
 
 	const { keyBoards, totalPages } = PG(faq, page, limit, pageType)
-	if (ctx.session.userId == adminId[0] || ctx.session.userId == adminId[1]) {
+	if (ctx.session.userId == adminId[0] || ctx.session.userId == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 		keyBoards.push([
 			{
 				text: "➕ Qo'shish",

@@ -53,7 +53,7 @@ composer.action(/tofaq_(\d+)/, async (ctx) => {
 			allFaqQuestion,
 		);
 
-		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 
 			await ctx.editMessageText(
 				`Ko'p so'raladigan savollarga qo'shildi.`,
@@ -71,7 +71,7 @@ composer.action(/tofaq_(\d+)/, async (ctx) => {
 
 composer.action(/editfaq_(\d+)/, async (ctx, next) => {
 	try {
-		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 			const question_id = parseInt(ctx.match[1]);	
 			const oldFaq = new FS(
 				path.resolve(__dirname, '..', 'data', 'faq.json'),
@@ -88,7 +88,7 @@ composer.action(/editfaq_(\d+)/, async (ctx, next) => {
 
 composer.action(/addfaq_(\d+)/, async (ctx, next) => {
 	try {
-		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+		if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 			await ctx.scene.enter('addFaq');
 			
 		}

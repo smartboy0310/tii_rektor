@@ -75,6 +75,17 @@ questionSceneUz.on('text', async (ctx) => {
 			]).extra(),
 		);
 
+		await ctx.telegram.sendMessage(
+			adminId[2],
+			`Yangi savol:\n${userQuestion}`,
+			Markup.inlineKeyboard([
+				{
+					text: '✏️ Javob yozish',
+					callback_data: `answer_${newQuestion.id}`
+				},
+			]).extra(),
+		);
+
 		new FS(path.resolve(__dirname, '..', 'data', 'questions.json')).write(
 			allQuestion,
 		);

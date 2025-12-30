@@ -13,7 +13,7 @@ composer.action(/questionq_(\d+)/, async (ctx, next) => {
     try {
         const pageOf = ctx.session.pageOf
 
-        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 
             const question_id = parseInt(ctx.match[1]);
             const oldQuestion = new FS(
@@ -122,7 +122,7 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
     try {
         const pageOf = ctx.session.pageOf
 
-        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1]) {
+        if (ctx.update.callback_query.from.id == adminId[0] || ctx.update.callback_query.from.id == adminId[1] || ctx.update.callback_query.from.id == adminId[2]) {
 
             const question_id = parseInt(ctx.match[1]);
             const oldFaq = new FS(
@@ -151,7 +151,6 @@ composer.action(/questionf_(\d+)/, async (ctx, next) => {
         }
         else {
             const question_id = parseInt(ctx.match[1]);
-
             const oldFaq = new FS(
                 path.resolve(__dirname, '..', 'data', 'faq.json'),
             );
